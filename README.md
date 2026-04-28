@@ -38,7 +38,7 @@ A secure file vault dashboard built with **React + Tailwind CSS + Vite**, featur
 #### 1. Clone the repository
 
 ```bash id="1a2b3c"
-git clone <your-repo-url>
+git clone https://github.com/mahoro-belyse/SecureVault.git
 cd securevault-dashboard
 ```
 
