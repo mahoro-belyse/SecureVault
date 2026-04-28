@@ -34,4 +34,26 @@ export default function ActivityLog({ entries }) {
         />
       </button>
 
-      
+      {!collapsed && (
+        <div className="overflow-y-auto" style={{ maxHeight: '200px' }}>
+          {entries.length === 0 ? (
+            <p className="px-3 py-3 text-[10px] font-inter" style={{ color: 'var(--sv-text-muted)' }}>No activity yet</p>
+          ) : (
+            entries.slice(0, 8).map((entry, i) => {
+              const Icon = iconMap[entry.type] || Eye;
+              return (
+                <div key={i} className="flex items-start gap-2 px-3 py-1.5 border-b" style={{ borderColor: 'var(--sv-border)' }}>
+                  <Icon size={10} className="mt-0.5 shrink-0" style={{ color: 'var(--sv-text-muted)' }} />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[10px] font-inter truncate" style={{ color: 'var(--sv-text-secondary)' }}>{entry.action}</p>
+                    <p className="text-[9px] font-mono" style={{ color: 'var(--sv-text-muted)' }}>{relativeTime(entry.ts)}</p>
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
+      )}
+    </div>
+  );
+}

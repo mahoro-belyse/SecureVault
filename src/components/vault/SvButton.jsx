@@ -1,6 +1,15 @@
 
 
+const variantStyles = {
+  primary: 'bg-sv-accent text-sv-base font-semibold hover:brightness-110 active:brightness-90',
+  ghost: 'bg-transparent border border-sv-border text-sv-text-secondary hover:bg-sv-hover hover:text-sv-text-primary hover:border-sv-border-active',
+  danger: 'bg-transparent border border-sv-danger text-sv-danger hover:bg-sv-danger hover:text-white',
+};
 
+const sizeStyles = {
+  sm: 'px-3 py-1.5 text-xs',
+  md: 'px-4 py-2 text-sm',
+};
 
 export default function SvButton({ variant = 'primary', size = 'md', children, className = '', ...props }) {
   return (
